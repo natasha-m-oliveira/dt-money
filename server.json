@@ -39,6 +39,30 @@
       "type": "outcome",
       "createdAt": "2022-12-14T20:24:23.798Z",
       "id": 5
+    },
+    {
+      "description": "Bootcamp Ignite",
+      "price": 1950,
+      "category": "Educação",
+      "type": "outcome",
+      "createdAt": "2022-12-19T12:21:19.744Z",
+      "id": 6
+    },
+    {
+      "description": "Aluguel",
+      "price": 1760,
+      "category": "Hospedagem",
+      "type": "outcome",
+      "createdAt": "2022-12-19T13:42:04.986Z",
+      "id": 7
+    },
+    {
+      "description": "Palestra",
+      "price": 4800,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2022-12-19T13:42:49.766Z",
+      "id": 8
     }
   ]
 }
