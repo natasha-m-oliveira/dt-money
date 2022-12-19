@@ -1,4 +1,4 @@
-import { CaretLeft, CaretRight } from 'phosphor-react'
+import { CalendarBlank, CaretLeft, CaretRight, TagSimple } from 'phosphor-react'
 import { useState } from 'react'
 import { useContextSelector } from 'use-context-selector'
 import { TransactionsContext } from '../../../../contexts/TransactionsContext'
@@ -9,7 +9,8 @@ import {
   PageContainer,
   PriceHighLight,
   TableContainer,
-  TablePagination,
+  Pagination,
+  IconContainer,
 } from './styles'
 
 export function Table() {
@@ -32,21 +33,31 @@ export function Table() {
           {slice.map((transaction) => {
             return (
               <tr key={transaction.id}>
-                <td width="50%">{transaction.description}</td>
+                <td>{transaction.description}</td>
                 <td>
                   <PriceHighLight variant={transaction.type}>
                     {priceFormatter.format(transaction.price)}
                   </PriceHighLight>
                 </td>
-                <td>{transaction.category}</td>
-                <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+                <td>
+                  <IconContainer>
+                    <TagSimple size={16} />
+                  </IconContainer>
+                  {transaction.category}
+                </td>
+                <td>
+                  <IconContainer>
+                    <CalendarBlank size={16} />
+                  </IconContainer>
+                  {dateFormatter.format(new Date(transaction.createdAt))}
+                </td>
               </tr>
             )
           })}
         </tbody>
       </TableContainer>
 
-      <TablePagination>
+      <Pagination>
         <NavControl
           disabled={page === 1}
           onClick={() => setPage((state) => --state)}
@@ -68,7 +79,7 @@ export function Table() {
         >
           <CaretRight weight="bold" size={24} />
         </NavControl>
-      </TablePagination>
+      </Pagination>
     </>
   )
 }

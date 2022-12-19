@@ -2,18 +2,20 @@ import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
 import { Table } from './components/Table'
-import { TransactionsContainer } from './styles'
+import { TransactionsCount } from './components/TransactionsCount'
+import { TransactionsContainer, TransactionsContent } from './styles'
 
 export function Transactions() {
   return (
-    <div>
+    <TransactionsContainer>
       <Header />
       <Summary />
 
-      <TransactionsContainer>
+      <TransactionsContent>
+        <TransactionsCount />
         <SearchForm />
         <Table />
-      </TransactionsContainer>
-    </div>
+      </TransactionsContent>
+    </TransactionsContainer>
   )
 }

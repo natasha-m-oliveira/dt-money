@@ -21,4 +21,31 @@ body {
 body, input, textarea, button {
   font: 400 1rem Roboto, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+  background: rgb(18, 18, 20);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  border: none;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(61, 60, 66);
+  border-radius: 3px;
+  cursor: move;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+}
 `

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const TableContainer = styled.table`
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 0 0.5rem;
+  border-spacing: 0 0.5rem;
   margin-top: 1.5rem;
 
   td {
@@ -11,6 +11,7 @@ export const TableContainer = styled.table`
     background: ${(props) => props.theme['gray-700']};
 
     &:first-child {
+      width: 50%;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
     }
@@ -20,15 +21,58 @@ export const TableContainer = styled.table`
       border-bottom-right-radius: 6px;
     }
   }
+
+  @media (max-width: 768px) {
+    border-spacing: 0;
+    tbody {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.25rem;
+      padding: 1.25rem;
+      border-radius: 6px;
+      background: ${(props) => props.theme['gray-700']};
+
+      td {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        padding: 0;
+        background: transparent;
+        color: ${(props) => props.theme['gray-500']};
+      }
+
+      td:first-child {
+        width: auto;
+        grid-column: 1 / -1;
+        color: ${(props) => props.theme['gray-300']};
+      }
+
+      td:nth-child(2) {
+        width: auto;
+        grid-column: 1 / -1;
+        margin-bottom: 0.5rem;
+      }
+
+      td:last-child {
+        justify-self: end;
+      }
+    }
+  }
 `
 
-export const TablePagination = styled.div`
+export const Pagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 
-  margin: 2.5rem auto;
+  margin-top: 2.5rem;
 `
 
 export const NavControl = styled.button`
@@ -78,5 +122,17 @@ export const PriceHighLight = styled.span<PriceHighLightProps>`
             content: '\u002D';
           `
         : null}
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`
+
+export const IconContainer = styled.div`
+  display: none;
+  font-size: 0;
+  @media (max-width: 768px) {
+    display: block;
   }
 `

@@ -5,6 +5,7 @@ export const SummaryContainer = styled.section`
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  overflow-y: auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -40,6 +41,12 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     css`
       background: ${props.theme['green-700']};
     `}
+
+  @media (max-width: 640px) {
+    strong {
+      font-size: 1.5rem;
+    }
+  }
 `
 
 interface SummaryIconProps {
